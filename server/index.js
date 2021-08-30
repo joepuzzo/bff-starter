@@ -9,7 +9,7 @@ const start = async () => {
     // Setup configuration ( database connections, etc )
     const configuration = await setup();
     // Build express app
-    const application = app(configuration);
+    const application = await app(configuration);
     // Create server
     const server = http.createServer(application).listen(configuration.PORT, () => {
       console.log('Server is now running on port', configuration.PORT);
